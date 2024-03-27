@@ -2,8 +2,9 @@ import { Command } from "../interfaces/Command";
 import { Message } from "discord.js";
 import { increaseHeartLevel } from "../services/userService";
 
-export const petCommand: Command = {
+const petCommand: Command = {
   name: "pet",
+  description: "Pet the cat and increase your hearts",
   async execute(message: Message) {
     const userId = message.author.id;
     const gifUrl = "INSERT URL HERE";
@@ -18,3 +19,5 @@ export const petCommand: Command = {
     message.channel.send(gifUrl);
   },
 };
+
+export default petCommand;
