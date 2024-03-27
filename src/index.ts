@@ -1,17 +1,18 @@
 import dotenv from 'dotenv';
 dotenv.config(); //Load the environment variables
 import client from './client'
+import setupGuildCreateEvent from './events/guildCreate';
 import './database/mongoose' //Database connection 
+import { messageCreate } from './events/messageCreate';
 
-client.once('ready', () => {
-    console.log(`${client.user?.tag} is online and ready!`);
-});
+//Event handlers
+setupGuildCreateEvent(client);
+client.on('messageCreate', messageCreate);
 
-client.on('messageCreate', (message) => {
-    if (!message.author.bot) {
-        console.log(`Message from ${message.author.tag}: ${message.content}`);
-        //MESSAGE HANDLING LOGIC
-    }
-});
-
+//Login to discord with the bot token
 client.login(process.env.DISCORD_BOT_TOKEN)
+
+//Successful Log
+client.on('ready', () => {
+    console.log("Bot is ready!");
+})
