@@ -1,0 +1,10 @@
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+const MONGODB_URI = process.env.MONGODB_URI as string;
+
+mongoose.connect(MONGODB_URI)
+    .then(() => console.log('Successfully connected to MongoDB'))
+    .catch(err => console.error('Connection error', err));
