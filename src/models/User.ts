@@ -1,14 +1,13 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model, } from 'mongoose';
+import { UserDocument } from '../interfaces/UserDocument';
 
-interface User {
-    
-}
-const userSchema = new mongoose.Schema({
+const UserSchema = new Schema<UserDocument>({
     userId: { type: String, required: true, unique: true },
     heartLevel: { type: Number, default: 0 },
-    lastPetted: { type: Date }
+    lastPetted: { type: Date, default: Date.now }
 });
 
-const User = mongoose.model('User', userSchema);
+const UserModel = model<UserDocument>('User', UserSchema);
 
-module.exports = User;
+export default UserModel;
+
