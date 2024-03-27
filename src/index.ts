@@ -1,6 +1,5 @@
 import dotenv from 'dotenv';
 dotenv.config(); //Load the environment variables
-
 import client from './client'
 import './database/mongoose' //Database connection 
 
