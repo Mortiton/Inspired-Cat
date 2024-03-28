@@ -12,17 +12,17 @@ const hearts: Command = {
         const heartLevel = await checkHeartLevel(userId);
 
         //response
-        const response = heartLevel !== null ?
-        `${message.author.username}, your hearts are currently level ${heartLevel} ❤️` :
+        const response = heartLevel !== 0 ?
+        `${message.author.username}, Your hearts at at level ${heartLevel} ❤️` :
         "You don't seem to have any hearts yet. Interact with the cat to earn some :3";
         
         try {
-          const file = new AttachmentBuilder('./images/fastBeg.gif', { name: 'catBeg.gif' });
+          const file = new AttachmentBuilder('./images/idleBlink.gif', { name: 'idleBlink.gif' });
             const embed = new EmbedBuilder()
             .setColor('#c958d8')
             .setTitle('Heart Level')
             .setDescription(response)
-            .setImage('attachment://catBeg.gif')
+            .setImage('attachment://idleBlink.gif')
             .setFooter({ text: 'Keep kitty happy to earn more hearts!' });
 
             
