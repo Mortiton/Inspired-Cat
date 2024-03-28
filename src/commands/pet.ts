@@ -11,6 +11,7 @@ const pet: Command = {
     // Update the heart level within the database
     const user = await increaseHeartLevel(userId);
 
+
     // Attachment to send
     const attachment = new AttachmentBuilder('./images/catYes.gif');
 
