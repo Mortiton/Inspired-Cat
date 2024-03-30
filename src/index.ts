@@ -4,7 +4,7 @@ import client from './client'
 import setupGuildCreateEvent from './events/guildCreate';
 import './database/mongoose' //Database connection 
 import { messageCreate } from './events/messageCreate';
-import { updateUserHeartLevel } from './utils/changeHeartLevel';
+// import { updateUserHeartLevel } from './utils/testFunctions';
 
 //TESTING
 // const ID = "116370325440036864";

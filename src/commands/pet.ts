@@ -14,23 +14,21 @@ const pet: Command = {
 
     //For each heart threshold a different response is given
     let responseContent = `${message.author.username}, your hearts are now level ${heartLevel} ❤️`;
-    let attachmentFilePath = './images/catSit.gif' ;//Default image
+    let attachmentFilePath = "./images/catSit.gif"; //Default image
 
     if (heartLevel < 3) {
-      attachmentFilePath = './images/catFright.gif';
+      attachmentFilePath = "./images/catFright.gif";
       responseContent = `Cat doesn't know you. You gave him a spook! Your hearts are now level ${heartLevel} ❤️`;
-    } else if (heartLevel >=3 && heartLevel < 10) {
-      attachmentFilePath = './images/catLay.gif';
+    } else if (heartLevel >= 3 && heartLevel < 10) {
+      attachmentFilePath = "./images/catLay.gif";
       responseContent = `Cat is tolerate of your existance... Your hearts are now level ${heartLevel} ❤️`;
-    } else if ( heartLevel >=10 && heartLevel < 20) {
-      attachmentFilePath = './images/catCrouch.gif';
-      responseContent = `Cat is enjoying your attention! Your hearts are now level ${heartLevel} ❤️`
+    } else if (heartLevel >= 10 && heartLevel < 20) {
+      attachmentFilePath = "./images/catCrouch.gif";
+      responseContent = `Cat is enjoying your attention! Your hearts are now level ${heartLevel} ❤️`;
     } else if (heartLevel >= 20) {
-      attachmentFilePath= './images/fastBeg.gif'
-      responseContent = `Cat loves you! Your hearts are now level ${heartLevel} ❤️`
-    } 
-
-    
+      attachmentFilePath = "./images/fastBeg.gif";
+      responseContent = `Cat loves you! Your hearts are now level ${heartLevel} ❤️`;
+    }
 
     // Attachment to send
     const attachment = new AttachmentBuilder(attachmentFilePath);
@@ -48,4 +46,3 @@ const pet: Command = {
 };
 
 export default pet;
-
